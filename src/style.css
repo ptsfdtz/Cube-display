@@ -4,14 +4,14 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000; /* 背景设为黑色 */
+  background-color: #3b3b3b; /* 背景设为黑色 */
   overflow: hidden;
 }
 
 .scene {
-  width: 200px;
-  height: 200px;
-  perspective: 800px; /* 设置透视效果 */
+  width: 300px; /* 增大场景的宽度 */
+  height: 300px; /* 增大场景的高度 */
+  perspective: 1000px; /* 设置透视效果 */
 }
 
 .cube {
@@ -19,25 +19,25 @@ body {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotate 10s infinite linear;
+  animation: rotate 30s infinite linear; /* 将动画时间延长至 30 秒 */
 }
 
 .face {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 300px; /* 每个面的宽度与场景相同 */
+  height: 300px; /* 每个面的高度与场景相同 */
   background-size: cover; /* 使图片覆盖整个面 */
   background-position: center; /* 居中显示图片 */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* 可选：设置边框 */
+  border: 1px solid rgba(0, 0, 0, 0.2); /* 可选：设置边框 */
 }
 
 /* 为每个面添加不同的图片 */
-.front  { transform: rotateY(  0deg) translateZ(100px); background-image: url('./images/front.jpg'); }
-.back   { transform: rotateY(180deg) translateZ(100px); background-image: url('./images/back.jpg'); }
-.right  { transform: rotateY( 90deg) translateZ(100px); background-image: url('./images/right.jpg'); }
-.left   { transform: rotateY(-90deg) translateZ(100px); background-image: url('./images/left.jpg'); }
-.top    { transform: rotateX( 90deg) translateZ(100px); background-image: url('./images/top.jpg'); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); background-image: url('./images/bottom.jpg'); }
+.front  { transform: rotateY(  0deg) translateZ(150px); background-image: url('./images/front.jpg'); }
+.back   { transform: rotateY(180deg) translateZ(150px); background-image: url('./images/back.jpg'); }
+.right  { transform: rotateY( 90deg) translateZ(150px); background-image: url('./images/right.jpg'); }
+.left   { transform: rotateY(-90deg) translateZ(150px); background-image: url('./images/left.jpg'); }
+.top    { transform: rotateX( 90deg) translateZ(150px); background-image: url('./images/top.jpg'); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); background-image: url('./images/bottom.jpg'); }
 
 @keyframes rotate {
   from {
