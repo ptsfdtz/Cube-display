@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* 背景设为黑色 */
+  overflow: hidden;
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 800px; /* 设置透视效果 */
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-size: cover; /* 使图片覆盖整个面 */
+  background-position: center; /* 居中显示图片 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 可选：设置边框 */
+}
+
+/* 为每个面添加不同的图片 */
+.front  { transform: rotateY(  0deg) translateZ(100px); background-image: url('./images/front.jpg'); }
+.back   { transform: rotateY(180deg) translateZ(100px); background-image: url('./images/back.jpg'); }
+.right  { transform: rotateY( 90deg) translateZ(100px); background-image: url('./images/right.jpg'); }
+.left   { transform: rotateY(-90deg) translateZ(100px); background-image: url('./images/left.jpg'); }
+.top    { transform: rotateX( 90deg) translateZ(100px); background-image: url('./images/top.jpg'); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); background-image: url('./images/bottom.jpg'); }
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
